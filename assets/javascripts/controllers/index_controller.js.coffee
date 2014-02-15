@@ -1,9 +1,10 @@
 Tastethispicture.IndexController = Ember.ArrayController.extend
 
-  getPhotos: ->
+  getPhotos: (callback) ->
+
+    return if @get("page") == @get("pages")
 
     @set "isLoading", true
-
     @set "page", (@get("page") + 1)
 
     $.getJSON "/pictures", page: @get("page"), (data) =>
@@ -13,5 +14,5 @@ Tastethispicture.IndexController = Ember.ArrayController.extend
       @set "perPage", data.perpage
       @set "page", data.page
       @get("model").addObjects(data.photo)
-
       @set "isLoading", false
+      callback() if callback?

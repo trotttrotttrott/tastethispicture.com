@@ -1,16 +1,18 @@
-#photos.panel
+#photos.panel.inf-scroll-outer-container.vertical
 
-  each
+  .inf-scroll-inner-container
 
-    .wrapper
+    each
 
-      img src=url_c
+      .wrapper
 
-      .info
-        .text.text-center
-          .title= title
-          .date= date datetaken
-        .icon
+        img src=url_c
+
+        .info
+          .text.text-center
+            .title= title
+            .date= date datetaken
+          .icon
 
   if isLoading
 
