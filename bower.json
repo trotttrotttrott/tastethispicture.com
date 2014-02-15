@@ -1,0 +1,10 @@
+{
+  "name": "tastethispicture",
+  "dependencies": {
+    "jquery": "2.0.3",
+    "ember": "1.4",
+    "ember-data": "1.0.0-beta.6",
+    "emblem.js": "0.3.11",
+    "foundation": "zurb/bower-foundation"
+  }
+}
