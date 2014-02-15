@@ -1,1 +1,17 @@
-| oh hi
+#photos.panel
+
+  each
+
+    .wrapper
+
+      img src=url_c
+
+      .info
+        .text.text-center
+          .title= title
+          .date= date datetaken
+        .icon
+
+  if isLoading
+
+    img#loading src="/assets/loading.gif"

@@ -1,1 +1,1 @@
-Tastethispicture.Picture = DS.Model.extend {}
+Tastethispicture.Picture = Ember.Object.extend {}

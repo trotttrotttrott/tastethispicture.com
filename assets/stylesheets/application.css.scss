@@ -25,23 +25,115 @@
   src: url(/fonts/opensans-semibold-webfont.eot?#iefix) format("eot"), url(/fonts/opensans-semibold-webfont.ttf) format("truetype"), url(/fonts/opensans-semibold-webfont.woff) format("woff"), url(/fonts/opensans-semibold-webfont.svg) format("svg");
 }
 
+@mixin transitions {
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+@mixin opacity($opacity) {
+  filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+  opacity: $opacity;
+}
+
+@mixin box-shadow {
+  -moz-box-shadow: 0 0 10px 0 #ccc;
+  -webkit-box-shadow: 0 0 10px 0 #ccc;
+  box-shadow: 0 0 10px 0 #ccc;
+}
+
 body {
   background: #f2f2f2;
   color: #bbb;
 
-  aside {
+  .panel {
+    background: #fff;
+  }
 
-    img {
-      margin: 45px 0 30px;
+  #menu {
+
+    .wrapper {
+      position: fixed;
+
+      img {
+        margin: 45px 0 30px;
+      }
+
+      .taste-this-picture {
+        font-size: 24px;
+        margin-bottom: 0.75rem;
+      }
+
+      .since {
+        font-size: 13px;
+      }
+    }
+  }
+
+  #photos {
+    @include box-shadow;
+    padding-bottom: 0;
+
+    .wrapper {
+      position: relative;
+      margin-bottom: 1.25rem;
+      background: #000;
+
+      img {
+        @include transitions;
+        display: block;
+      }
+
+      .info {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        .text {
+          @include transitions;
+          @include opacity(0);
+          margin-top: 30%;
+          color: #fff;
+
+          .title {
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+          }
+
+          .date {
+            font-size: 13px;
+            font-family: "OpenSans-Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+          }
+        }
+
+        .icon {
+          background: url("/assets/info.png");
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+
+      &:hover {
+
+        img {
+          @include opacity(0.2);
+        }
+
+        .info .text {
+          @include opacity(1);
+        }
+      }
     }
 
-    .taste-this-picture {
-      font-size: 24px;
-      margin-bottom: 0.75rem;
-    }
-
-    .since {
-      font-size: 13px;
+    #loading {
+      display: block;
+      margin: 0 auto 1.25rem;
     }
   }
 }

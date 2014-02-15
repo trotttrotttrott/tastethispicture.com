@@ -8,6 +8,7 @@ class Flickr
     def get_stream(page)
       conn.get "", :method => "flickr.people.getPhotos",
                    :page => page,
+                   :per_page => 25,
                    :api_key => ENV["FLICKR_KEY"],
                    :user_id => ENV["FLICKR_USER_ID"],
                    :format => "json",

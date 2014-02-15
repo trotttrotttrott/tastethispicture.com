@@ -19,17 +19,11 @@ class App < Sinatra::Base
     end
   end
 
-  helpers do
-    def image_tag(path)
-      "<img src=\"/assets/#{path}\" />"
-    end
-  end
-
   get "/" do
     haml :index
   end
 
-  get "/photo-stream" do
+  get "/pictures" do
     json Flickr.get_stream(params[:page]).body
   end
 end

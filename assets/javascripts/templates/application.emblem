@@ -1,12 +1,14 @@
 .row
 
-  %aside.large-3.columns.text-center
+  #menu.large-3.columns.text-center
 
-    img src="/assets/tastethispicture.png"
+    .wrapper
 
-    .taste-this-picture TASTE.THIS.PICTURE
+      img src="/assets/tastethispicture.png"
 
-    .since Daily photography since 2011
+      .taste-this-picture TASTE.THIS.PICTURE
+
+      p.since Daily photography since 2011
 
   .large-9.columns
 
