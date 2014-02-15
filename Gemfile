@@ -14,6 +14,11 @@ gem "sprockets"
 gem "coffee-script"
 gem "therubyracer"
 
+gem "emblem-sprockets"
+
+gem "faraday"
+
 group :development do
   gem "debugger"
+  gem "dotenv"
 end
